@@ -68,3 +68,5 @@ func main() {
 // The way go stores the module's uncompiled code whether you go install or go get in both $GOPATH/pkg and $GOPATH/src is via an "import path structure"
 // Suppose you do `go install github.com/cbergoon/speedtest-go@latest` then you if you go to $GOPATH/pkg/mod directory then you can see folder structure as
 // pkg/mod/github.com/cbergoon/speedtest-go@latest/... This makes it easy to traverse to the right directory.
+
+// golang comes with a set of useful std lib packages to use - https://pkg.go.dev/std
