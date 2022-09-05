@@ -17,7 +17,8 @@ import (
 func main() {
 	fmt.Println("Hello World!")
 }
-// go build (compiles and places executable in bin directory, which can then be called) 
+
+// go build (compiles and places executable in bin directory, which can then be called)
 // or go run (compiles, runs and deletes executable) can be used to run this code.
 
 // How go enviroment and ecosystem works?
@@ -48,22 +49,21 @@ func main() {
 
 // Therefore, we have two ways of getting packages from the pkg.go.dev offical repo
 
-// 1. 'go install path_to_pkg_url@version' this downloads the code from the pkg.go.dev and 
+// 1. 'go install path_to_pkg_url@version' this downloads the code from the pkg.go.dev and
 // follows build instructions that comes with the package and places downloaded code in $GOPATH/pkg and any
 // resulting binaries in $GOPATH/bin. If you happen to write your own go module that has an accompanying executable then typing
 // 'go install' in the root of your project will also compile your current project and install it in the $GOPATH/bin dir so you can use it directly without
 // qualifying it with the full path. In fact i believe this is the main purpose of go install. It basically has an added feature where if you pass a vcs url it will also
 // fetch the package via the git by default of whatever vcs or git binary you point to in $GOVCS env var.
 
-// 2. `go get -d path_to_pkg_url@version` this will download the code only. It will not build and install it in our $GOPATH. If you skip the -d command then 
+// 2. `go get -d path_to_pkg_url@version` this will download the code only. It will not build and install it in our $GOPATH. If you skip the -d command then
 // it will also build & install. In the future released at the time of writing go get will have -d option enabled by default.
 // So i recommend always using -d for now. go get will actually download the uncompiled go code of a module to the $GOPATH/src directory.
 // This is different from $GOPATH/pkg directory. This is called module aware mode. As in go get is used to download modules as uncompiled go code to import in our own code
 // whereas, go install is mainly used to download modules that are meant to be built immediately and used as executables and CLI tools. So next time we go install a module
 // we have already go installed go quickly checks the $GOPATH/pkg directory and simply rebuilds it instead of downloading it (given that the code didnt change ofcourse, it uses a checksum for this)
 // Another important thing is that go get -d can only be run inside another go project. Basically it needs a 'go.mod' in the root of the porject dir for go to become module aware.
-// This is like go's version of package.json if you will. 
-
+// This is like go's version of package.json if you will.
 
 // The way go stores the module's uncompiled code whether you go install or go get in both $GOPATH/pkg and $GOPATH/src is via an "import path structure"
 // Suppose you do `go install github.com/cbergoon/speedtest-go@latest` then you if you go to $GOPATH/pkg/mod directory then you can see folder structure as

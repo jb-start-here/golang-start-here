@@ -13,11 +13,11 @@ func main() {
 	//We use the var keyword followed by name and then type because it feels natural to say
 	// create a `var` called `language` of the type `string`
 
-	// There are two ways of declaring variables. 
+	// There are two ways of declaring variables.
 	// First kind is to declare first first and then assign it
-	var language string;
+	var language string
 	language = "en"
-	
+
 	// Second kind is to declare and assign in one line.
 	var country string = "us"
 
@@ -26,7 +26,7 @@ func main() {
 	// There is a another way to do the second type and its a golang syntactic sugar
 	// We cant redeclare an already declared variable so for example;
 	// `var nation string = "ca"` can be rewritten using golang syntactic sugar as
-	
+
 	nation := "ca"
 	// This syntactic sugar was created to mimic some dynamically typed languages like ruby for example;
 	// the `:=` symbol automatically figures the type of the value being assigned and created a var names nation with the inferred type
@@ -34,7 +34,7 @@ func main() {
 	printDashes()
 	fmt.Printf("%s-%s\n", language, nation) // => en-ca
 
-	// to declare constants we use 
+	// to declare constants we use
 	const defaultGreeting string = "Hello World"
 	// defaultGreeting = "Goodbye World" => throws an error
 
@@ -50,19 +50,19 @@ func main() {
 
 	printDashes()
 	var (
-		name string = "Charlie"
+		name  string = "Charlie"
 		quirk string = "Illiteracy"
-		job string = "Janitor/Rat Basher"
-		age int = 42
+		job   string = "Janitor/Rat Basher"
+		age   int    = 42
 	)
 
 	fmt.Println(name, quirk, job, age)
 
 	printDashes()
 	const (
-		animal string = "dog" 
-		sound = "bark!" // this is also valid; remember consts by default is string so you dont need to declare types 
-		numberOfLegs int = 4 // if its anything other than string then we must declare it 
+		animal       string = "dog"
+		sound               = "bark!" // this is also valid; remember consts by default is string so you dont need to declare types
+		numberOfLegs int    = 4       // if its anything other than string then we must declare it
 	)
 	fmt.Println(animal, sound, numberOfLegs)
 
@@ -81,7 +81,6 @@ func main() {
 func returnAString() string {
 	return "Ignore me!!"
 }
-
 
 // non exported
 func printDashes() {

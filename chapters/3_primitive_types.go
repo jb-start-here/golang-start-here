@@ -5,10 +5,9 @@ import "fmt"
 func main() {
 	// https://go.dev/ref/spec#Types
 
-
 	// Short documentation link
 
-	// the `type` keyword is used to create custom types or create type aliases and 
+	// the `type` keyword is used to create custom types or create type aliases and
 	// https://go.dev/ref/spec#Type_definitions
 	// https://go.dev/ref/spec#Type_identity
 

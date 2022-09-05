@@ -1,25 +1,26 @@
 package main
 
 import "fmt"
+
 func main() {
 	// how to declare, instantiate, assign arrays in golang
 	// we need to know the array size at compile time itself. sucks.
 
 	// [3]int{6, 7, 8} - this is how you delcare an array literal [sizeOfArray]type{elements}
 
-	var a [3]int // delcare a variable of the type array
+	var a [3]int        // delcare a variable of the type array
 	a = [3]int{1, 2, 3} // assign
-	fmt.Println(a) // use
+	fmt.Println(a)      // use
 
-	var x [3]int = [3]int{1, 2, 3} // declare and assign
-	fmt.Println(x) // use
+	var x [3]int = [3]int{1, 2, 3}   // declare and assign
+	fmt.Println(x)                   // use
 	y := [2]string{"hello", "world"} // declare and assign
-	fmt.Println(y) // use
+	fmt.Println(y)                   // use
 
 	// use ... to auto infer the size of an array. compiler just counts the items passed to an array and auto fills the number
 
-	t := [...]int{4,5,6,7,8} // declare and assign
-	fmt.Println(t) // use
+	t := [...]int{4, 5, 6, 7, 8} // declare and assign
+	fmt.Println(t)               // use
 
 	// Access elements of an array
 	chars := [...]string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"}
@@ -28,14 +29,14 @@ func main() {
 	fmt.Println(chars[1]) // b
 	fmt.Println(chars[2]) // c
 
-	// You can also get a slice of an array (a partial of an array) 
+	// You can also get a slice of an array (a partial of an array)
 	// slices are much more useful and widely used entities than actual arrays in golang
 	// all slices are backed by an actual array data structure in golang
 
-	// easiest way to get a slice of an array is 
+	// easiest way to get a slice of an array is
 	fmt.Println(chars[0:4]) // inclusive:exclusive [a, b, c, d] (0, 1, 2, 3 indexes)
-	fmt.Println(chars[3:]) // 3 to end
-	fmt.Println(chars[:5]) // 0 to 4
+	fmt.Println(chars[3:])  // 3 to end
+	fmt.Println(chars[:5])  // 0 to 4
 
 	// you can also create slices manually by skipping the size while array var declaration
 
@@ -63,12 +64,12 @@ func main() {
 	Arraybyval := strArray
 
 	Arraybyval[0] = "PAPAYA"
-	fmt.Println(strArray) // [Apple Mango Guava]
+	fmt.Println(strArray)   // [Apple Mango Guava]
 	fmt.Println(Arraybyval) // [PAPAYA Mango Guava]
 
 	// data is passed by reference
 	Arraybyref := &strArray
 	Arraybyref[0] = "BANANA"
-	fmt.Println(strArray) // [BANANA Mango Guava]
+	fmt.Println(strArray)   // [BANANA Mango Guava]
 	fmt.Println(Arraybyref) // &[BANANA Mango Guava]
 }
