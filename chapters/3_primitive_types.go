@@ -24,4 +24,11 @@ func main() {
 
 	// Hello is of type string
 	// 45 is of type main.ANumber
+
+	// Every type has a default value.
+	// when a variable of certain type is declared but not initialized yet then the the variable actually already has a value
+	// this value is called is the default value
+	// for int - 0
+	// for string - ""
+	// for bool - false
 }

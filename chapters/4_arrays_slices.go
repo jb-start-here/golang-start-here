@@ -72,4 +72,22 @@ func main() {
 	Arraybyref[0] = "BANANA"
 	fmt.Println(strArray)   // [BANANA Mango Guava]
 	fmt.Println(Arraybyref) // &[BANANA Mango Guava]
+
+	// you can also use a make function to create custom slices with custim sized backing arrays. kinda like alloc
+	// this make function belongs in the builtin package
+	// make(type of slice, starting length, starting capacity) - the last argument is optional you can specify the capacity if needed
+	intSlice := make([]int, 3, 5)
+
+	fmt.Println(intSlice)                                                                 // [0 0 0] by default the value of ints are 0
+	fmt.Printf("Slice has size of %v and capacity of %v\n", len(intSlice), cap(intSlice)) //Slice has size of 3 and capacity of 5
+
+	// if you create a slice of a slice they are both backed by the same array - although the slice entity itself is different!!!!
+	sliceA := []int{0, 1, 2, 3, 4, 5}
+	sliceB := sliceA[0:2]
+	fmt.Println(sliceB) // [0 1]
+	fmt.Printf("Type of sliceB is %T\n", sliceB)
+
+	sliceB[0] = 50
+	fmt.Println(sliceB) // [50 1]
+	fmt.Println(sliceA) // [50 1 2 3 4 5]
 }
