@@ -8,6 +8,11 @@ package main // All go code must be defined in a package.
 // All imports are done by import keyword. "fmt" is the formatting package
 // from stdlib that houses print to stdout and formatting functions
 
+// By default go installation comes with many packages like fmt, os and bufio etc. if we want to use them we need
+// import these packages using import funciton.
+
+// All functions in the "builtin" package are imported into all go programs by default.
+
 // Go is not an OOP language - although object like behavior can be modeled via some language features like
 // structs and also interfaces
 import (
