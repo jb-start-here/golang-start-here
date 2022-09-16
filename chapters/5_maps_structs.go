@@ -80,7 +80,15 @@ func main() {
 		affiliations: []string{"Golden Geese"},
 	}
 
-	fmt.Println(charlie, dennis)
+	// You can also instantiate another struct without the keys - just keep in mind the sequence of the values
+	sweetDee := Role{
+		"Deandra Reynolds",
+		"Waitress also",
+		42,
+		[]string{"Golden Geese", "ZingingCutie23"},
+	}
+
+	fmt.Println(charlie, dennis, sweetDee)
 	fmt.Println(charlie.affiliations) // This is how we access attributes of a struct [Gruesome Twosome Freight Train Pigeon Boys]
 
 	// You can also include a struct inside a struct - this can be used to implement compositional patterns
