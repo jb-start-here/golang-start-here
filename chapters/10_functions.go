@@ -49,6 +49,12 @@ func main() {
 	fmt.Println(joe.greeter())
 	joe.legallyChangeNameTo("Joseph", "Schmoseph")
 	fmt.Println(joe.greeter())
+
+	var mySpecialInt SpecialCustomInt
+	mySpecialInt = SpecialCustomInt(43) // 43 is an int though so we should type cast it
+
+	mySpecialInt.valueReceiverMethod()
+	mySpecialInt.pointerReceiverMethod()
 }
 
 // example of fuction delcaration with arguments
@@ -184,8 +190,6 @@ func anonymounFunctionContainer() {
 // from any variable of the type as if the function was a method of the type.
 // It is most commonly used with struct types.
 
-// You can only use struct or a pointer to a struct type on here
-
 // Structs are the closes thing to classes in golang and methods are a way to spoof behavior of class
 // like in methods of ruby classes for example
 
@@ -221,3 +225,25 @@ func (p *Person) legallyChangeNameTo(newFName, newLName string) {
 }
 
 // if `joe` was a var of type person struct then you can call `joe.greeter()`
+
+// We've only seen methods on structs .i.e the receiver has been a struct or a pointer to a struct
+// BUT, technically, the receiver of a method can be any type in golang. We just need to make sure
+// we create a type wrapper or a type clone. (this is diffferent from type aliasing)
+
+// This is because primitive of inbuilt singular unit types cannot be receivers
+// Struct however is not a singular unit type its a collection of a shape of types.
+
+// If we were to say create a custom type that just wraps an int then we could make it
+// a receiver because golang compiler doesnt consider it a primitive type anymore...
+
+// func (receiver *int) method() will not work
+// func (receiver int) method() will not work
+
+// However
+type SpecialCustomInt int // Here were just cloning int type into a new entity and giving it a custom name
+func (receiver SpecialCustomInt) valueReceiverMethod() {
+	fmt.Println(receiver, "Good Number!")
+}
+func (receiver *SpecialCustomInt) pointerReceiverMethod() {
+	fmt.Println(*receiver, "Great Number!")
+}
