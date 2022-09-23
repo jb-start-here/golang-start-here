@@ -230,12 +230,12 @@ func selectChannel() {
 }
 
 func main() {
-	// printChannels()
-	// syncRoutinesWithChannels()
-	// // deadlockedRoutine()
-	// castToUnidirectional()
-	// closeChannel()
-	// rangeOnChannel()
-	// bufferedChannels()
+	printChannels()
+	syncRoutinesWithChannels()
+	// deadlockedRoutine()
+	castToUnidirectional()
+	closeChannel()
+	rangeOnChannel()
+	bufferedChannels()
 	selectChannel()
 }
