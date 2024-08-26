@@ -1,3 +1,5 @@
+//go:build ignore 
+
 // Golang is a strongly typed language
 // this page explains how variables are declared, assigned, exported and scoped within golang.
 // We can also take a look at how to use constants

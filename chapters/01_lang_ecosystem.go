@@ -1,3 +1,5 @@
+//go:build ignore 
+
 // Basic Hello world in Go
 
 package main // All go code must be defined in a package.
