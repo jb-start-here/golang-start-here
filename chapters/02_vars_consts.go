@@ -77,7 +77,7 @@ func main() {
 	fmt.Println(HTTPMethod)
 
 	// for write only variables you can use _. Also, you dont have to declare an _ so you can just use `=` not `:=`
-	_ = returnAString
+	_ = returnAString()
 }
 
 func returnAString() string {

@@ -94,6 +94,12 @@ func deadlockedRoutine() {
 	// Exception is the we cant recover from deadlock panic
 }
 
+func anotherDeadLockedRoutine() {
+	x := make(chan bool)
+
+	x <- true
+}
+
 // We can also make unidirectional channels
 // '<- chan' - send only
 // 'chan <-' - receive only
@@ -235,6 +241,7 @@ func main() {
 	printChannels()
 	syncRoutinesWithChannels()
 	// deadlockedRoutine()
+	// anotherDeadLockedRoutine()
 	castToUnidirectional()
 	closeChannel()
 	rangeOnChannel()

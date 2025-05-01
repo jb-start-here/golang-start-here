@@ -1,4 +1,4 @@
-//go:build ignore 
+//go:build ignore
 
 // Basic Hello world in Go
 
@@ -77,3 +77,12 @@ func main() {
 // pkg/mod/github.com/cbergoon/speedtest-go@latest/... This makes it easy to traverse to the right directory.
 
 // golang comes with a set of useful std lib packages to use - https://pkg.go.dev/std
+
+// what is go mod ? The go mod command is an essential tool in the Go programming language ecosystem. It provides developers with a set of functions to manage Go modules
+
+// you can do the following with go mod
+// go mod init moduleName
+// go mod download
+// go mod tidy
+// go mod verify
+// go mod vendor

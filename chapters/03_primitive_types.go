@@ -15,16 +15,23 @@ func main() {
 
 	type AString = string //alias
 	// AString == string
+
+	type BString string // clone instead of alias
+	// BString != string
+
 	type ANumber int // custom type (although it just points to a int it doesnt create an alias - creates a new type)
 	// ANumber != int
 
 	var a AString = "Hello"
+	var aa BString = "World"
 	var b ANumber = 45
 
 	fmt.Printf("%v is of type %T\n", a, a)
+	fmt.Printf("%v is of type %T\n", aa, aa)
 	fmt.Printf("%v is of type %T\n", b, b)
 
 	// Hello is of type string
+	// World is of type main.BString
 	// 45 is of type main.ANumber
 
 	// Every type has a default value.

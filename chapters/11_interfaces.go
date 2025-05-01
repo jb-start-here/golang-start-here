@@ -225,9 +225,19 @@ func main() {
 			fmt.Printf("Not a dog")
 		}
 	}
-	// This `interface.(type)` is a special statement ans only works in switch statements
+	// This `interface.(type)` is a special statement ans only works in switch statements; type is the keyword here
 
-	// You can also ember interfaces in another interface
+	// you can also confirm during compile time that if a concrete type implements an interface
+	// by using the following statement
+	var _ dog = (*heeler)(nil)
+	// This will not compile if heeler does not implement the dog interface
+	// This is a common pattern to ensure that a concrete type implements an interface
+	// Explanation of this statement is that we are creating a variable of the type dog
+	// and assigning it a nil value of the type heeler pointer. This will not compile if heeler does not implement the dog interface
+	// (A)(something) is how we type case something to a type A
+	// The zero value of a pointer is nil so we are creating a nil pointer of the type heeler
+
+	// You can also embed interfaces in another interface
 	type writer interface {
 		write(input string)
 	}
